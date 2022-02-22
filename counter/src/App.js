@@ -21,17 +21,4 @@ function App() {
   )
 }
 
-// function Timer() {
-
-//     return (
-//       <div className='timer'>
-//         <div className='timer'></div>
-//         <div className='container'></div>
-//         <div className='timer-container'></div>
-//         <h1>Timer</h1>
-//       </div>
-//     )
-// }
-
 export default App;
-// export Timer;
