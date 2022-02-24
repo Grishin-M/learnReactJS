@@ -1,0 +1,53 @@
+.wrapper-form {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  margin-top: 50px;
+}
+.form {
+  display: flex;
+  width: 500px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+}
+.form-style {
+  display: flex;
+  flex-flow: column;
+  height: 250px;
+  justify-content: space-between;
+  line-height: 40px;
+}
+.form-label {
+  display: flex;
+  font-weight: bold;
+  font-size: 24px;
+}
+.form-label sup {
+  color: red;
+}
+input[type="text"],
+input[type="number"] {
+  width: 222px;
+  height: 40px;
+  border: 1px solid #266dc2;
+  padding-left: 10px;
+}
+.form-btn {
+  display: flex;
+  width: 500px;
+  flex-flow: column;
+  margin-top: 25px;
+}
+.btn-form {
+  margin-top: 25px;
+  background-color: #266dc2;
+  color: #fff;
+  font-size: 20px;
+  width: 150px;
+  height: 40px;
+  border: none;
+  display: block;
+  margin: 0 auto;
+}

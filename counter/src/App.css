@@ -5,37 +5,5 @@
   flex-wrap: wrap;
   max-width: 650px;
   margin: 0 auto;
-}
-.wrapper-second {
-  display: flex;
-  align-items: center;
-}
-.btn {
-  width: 150px;
-  height: 40px;
-  text-transform: uppercase;
-  background: none;
-  border: 3px solid #e6e6e6;
-  cursor: pointer;
-}
-.btn-up span {
-  color: #2d6a4f;
-  font-size: 18px;
-}
-.btn-down span {
-  color: #9d0208;
-  font-size: 18px;
-}
-.cleaning {
-  margin-top: 25px;
-}
-.App {
-  margin: 0 50px;
-  font-size: 1.75em;
-  border: 3px solid #e6e6e6;
-  width: 100px;
-  height: 100px;
-  align-items: center;
-  justify-content: center;
-  display: flex;
+  flex-flow: column;
 }
