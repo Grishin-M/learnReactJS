@@ -15,6 +15,7 @@
 import './App.css';
 import Form from './components/Form/Form'
 import Counter from './components/Counter/Counter'
+import Timer from './components/Timer/Timer'
 
 function App() {
   
@@ -22,6 +23,7 @@ function App() {
     <div className='wrapper'>
       <Counter />
       <Form />
+      <Timer />
     </div>
   )
 }
