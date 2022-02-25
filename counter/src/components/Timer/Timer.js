@@ -20,7 +20,7 @@ function Timer() {
           setMinutes(minutes + 1);
           setSeconds(0)
         }
-    }, 1)
+    }, 10)
   
     return () => clearInterval(timer);
   
