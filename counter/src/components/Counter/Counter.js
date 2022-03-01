@@ -10,13 +10,21 @@ function Counter() {
   return (
     <div>
       <div className='wrapper-second'>
-        <button className='btn btn-up' onClick={incrementItem}><span>&#9650;</span> Go up <span>&#9650;</span></button>
+        <button className='btn btn-up'
+        data-testid="btn-increment"
+        onClick={incrementItem}><span>&#9650;</span> Go up <span>&#9650;</span></button>
         <div className='App'>
-          <h1>{item}</h1>
+          <h1 data-testid="counter-text">{item}</h1>
         </div>
-        <button className='btn btn-down' onClick={decrementItem}><span>&#9660;</span> Go down <span>&#9660;</span></button>
+        <button className='btn btn-down'
+        data-testid="btn-decrement"
+        onClick={decrementItem}><span>&#9660;</span> Go down <span>&#9660;</span></button>
       </div>
-      <div className='cleaning'><button className='btn btn-clear' onClick={clearItem}>Clear</button></div>
+      <div className='cleaning'>
+        <button className='btn btn-clear'
+        data-testid="btn-clear"
+        onClick={clearItem}>Clear</button>
+      </div>
     </div>
   )
 }

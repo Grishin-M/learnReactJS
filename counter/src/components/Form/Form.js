@@ -18,9 +18,15 @@ function From() {
       <div className='wrapper-form'>
        <form className='form'>
           <div className='form-style'>
-            <label className='form-label'>Имя<sup>*</sup>: </label>
-            <label className='form-label'>Фамилия<sup>*</sup>: </label>
-            <label className='form-label'>Возраст: </label>
+            <label 
+            aria-label='Имя'
+            className='form-label'>Имя<sup>*</sup>: </label>
+            <label 
+            aria-label='Фамилия'
+            className='form-label'>Фамилия<sup>*</sup>: </label>
+            <label 
+            aria-label='Возраст:'
+            className='form-label'>Возраст: </label>
           </div>
 
           <div className='form-style'>

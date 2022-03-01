@@ -41,7 +41,7 @@ function Timer() {
          <h1>{minutes}:{seconds}:{mseconds}</h1>
          <div className='timerButtons'>
            <button className='restart' onClick={restart}>Перезапустить</button>
-         <button className='stop' onClick={stop}>Стоп</button>
+           <button className='stop' onClick={stop}>Стоп</button>
          </div>
        </div>
   )
