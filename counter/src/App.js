@@ -16,6 +16,7 @@ import './App.css';
 import Form from './components/Form/Form'
 import Counter from './components/Counter/Counter'
 import Timer from './components/Timer/Timer'
+import MyApiComponent from './components/Api/Api';
 
 function App() {
   
@@ -24,6 +25,7 @@ function App() {
       <Counter />
       <Form />
       <Timer />
+      <MyApiComponent />
     </div>
   )
 }
