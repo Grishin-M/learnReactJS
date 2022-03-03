@@ -12,11 +12,24 @@
  * 5) после ввода данных отобразить все это все в виде строки снизу или сверху
  */
 
+// useRef создать ссылку на дом ноду и прекрепить ее к самой ноде и по клику в консоле выводить любую ноду
+
+// useMemo сделать так чтобы чтобы значение вычислялось в дочернем компоненте только если пропс поменялся (придумать какие то values)
+
+// useCallback сделать тоде самое для мемоизации функции в useCallback
+
+// что такое event loop и задачки я скину
+
+// микро макро таски их отличие понятие асинхронности в js
+
+// написать свой кастомный customMap аналог реального map из языка js
+
 import './App.css';
 import Form from './components/Form/Form'
 import Counter from './components/Counter/Counter'
 import Timer from './components/Timer/Timer'
 import MyApiComponent from './components/Api/Api';
+import CounterForMemo from './components/useMemo/counterForMemo';
 
 function App() {
   
@@ -26,6 +39,7 @@ function App() {
       <Form />
       <Timer />
       <MyApiComponent />
+      <CounterForMemo />
     </div>
   )
 }
