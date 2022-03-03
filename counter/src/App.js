@@ -30,16 +30,18 @@ import Counter from './components/Counter/Counter'
 import Timer from './components/Timer/Timer'
 import MyApiComponent from './components/Api/Api';
 import CounterForMemo from './components/useMemo/counterForMemo';
+import UseCallback from './components/useCallback/UseCallback';
 
 function App() {
   
   return (
     <div className='wrapper'>
+      <CounterForMemo />
+      <UseCallback />      
       <Counter />
       <Form />
       <Timer />
       <MyApiComponent />
-      <CounterForMemo />
     </div>
   )
 }
