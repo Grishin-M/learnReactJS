@@ -15,12 +15,16 @@ function UseCallback() {
 
   return (
     <div style={changeStyle}>
+      <h2>useCallback</h2>
       <input
         type='number'
         value={number}
         onChange={event => setNumber(parseInt(event.target.value))}
       />
-      <button onClick={() => setMyColor(prev => !prev)}>
+      <button
+        onClick={() => setMyColor(prev => !prev)}
+        style={{margin: '0 0 0 20px'}}
+      >
         Click Me
       </button>
       <List getItems={getItems} />
