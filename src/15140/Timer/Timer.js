@@ -2,34 +2,56 @@ import React, { useState, useEffect } from 'react';
 import '../Timer/Timer.css';
 
 function Timer() {
+
+  const StartValues = {
+    mseconds: 0,
+    seconds: 0,
+    minutes: 0,
+  }
   
-  const [mseconds, setMSeconds] = useState(0);
-  const [seconds, setSeconds] = useState(0);
-  const [minutes, setMinutes] = useState(0);
-  
+  const [time, setTime] = useState(StartValues);
+
   let timer;
-  
+    
   useEffect(() => {
     timer = setInterval(() => {
-      setMSeconds(mseconds + 1);
-        if(mseconds === 100) {
-          setSeconds(seconds + 1);
-          setMSeconds(0);
+      setTime(() => {
+        return {
+          mseconds: time.mseconds + 1,
+          seconds: time.seconds,
+          minutes: time.minutes,
         }
-        if(seconds === 59) {
-          setMinutes(minutes + 1);
-          setSeconds(0)
-        }
+      })
     }, 10)
-  
     return () => clearInterval(timer);
-  
   });
+  
+  /* Пробовал, но ничего вообще не отображалось */
+  // useEffect(() => {
+  //   timer = setInterval(() => {
+  //     setTime(time.mseconds + 1);
+  //       if(time.mseconds === 100) {
+  //         setTime(time.seconds + 1);
+  //         setTime(0);
+  //       }
+  //       if(seconds === 59) {
+  //         setTime(time.minutes + 1);
+  //         setTime(0)
+  //       }
+  //   }, 10)
+  
+  //   return () => clearInterval(timer);
+  
+  // });
 
   const restart = () => {
-    setMSeconds(0);
-    setSeconds(0);
-    setMinutes(0);
+    setTime(() => {
+        return {
+          mseconds: time.mseconds = 0,
+          seconds: time.seconds = 0,
+          minutes: time.minutes = 0,
+        }
+      })
   }
   const stop = () => {
     clearInterval(timer);
@@ -38,7 +60,7 @@ function Timer() {
   return (
        <div className='Clock'>
          <h1>Секундомер</h1>
-         <h1>{minutes}:{seconds}:{mseconds}</h1>
+         <h1>{time.minutes}:{time.seconds}:{time.mseconds}</h1>
          <div className='timerButtons'>
            <button className='restart' onClick={restart}>Перезапустить</button>
            <button className='stop' onClick={stop}>Стоп</button>
