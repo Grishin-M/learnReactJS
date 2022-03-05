@@ -1,23 +1,19 @@
 import { useState } from 'react';
-import StartValues from '../Form/state'
+import initialState from '../Form/state'
 import '../Form/Form.css'
 
-// один useState ???? { } refactoring
-// один обработчик
-
-function From() {
+function From(){
   
-  const [input, setInput] = useState(StartValues);
+  const [input, setInput] = useState(initialState);
 
   const changeValue = (event) => {
     const { name, value } = event.target;
-    setInput((prev) => {
-      return {
-        ...prev,
-        [name]: value
-      }
-    })
+    setInput((prev) => ({ ...prev, [name]: value }))
   };
+
+  const showResult = () => {
+    setInput(() => ({Result: 'Имя: ' + input.userName + ' ' + 'Фамилия: ' + input.surname + ' ' + 'Возраст: ' + input.age}))
+  }
 
   return (
       <div className='wrapper-form'>
@@ -33,9 +29,7 @@ function From() {
             aria-label='Возраст:'
             className='form-label'>Возраст: </label>
           </div>
-
           <div className='form-style'>
-           
             <input
               className='form-input'
               type='text'
@@ -44,7 +38,6 @@ function From() {
               onChange={changeValue}
               name="userName"
             />
-           
             <input
               className='form-input'
               type='text'
@@ -53,25 +46,17 @@ function From() {
               onChange={changeValue}
               name="surname"
             />
-           
             <input
               className='form-input'
               type='number' 
               onChange={changeValue}
               name="age"
             />
-
           </div>
-
           <div className='form-btn'>    
-            <button className='btn-form' type="button" onClick={() => setInput(() => ({
-              Result: String('Имя: ' + input.userName) + ' ' + 
-              String('Фамилия: ' + input.surname) + ' ' + 
-              String('Возраст: ' + input.age)
-              }))}>Отправить</button>
+            <button className='btn-form' type="button" onClick={showResult}>Отправить</button>
             <p>Результат: {input.Result}</p>
           </div>
-
        </form>
       </div>
   )
