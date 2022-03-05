@@ -1,0 +1,17 @@
+.Clock {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.timerButtons {
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+.restart,
+.stop {
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+}
