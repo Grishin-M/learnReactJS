@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../Timer/Timer.css';
 
 function Timer() {
@@ -11,7 +11,7 @@ function Timer() {
   
   const [time, setTime] = useState(StartValues);
 
-  let timer;
+  let timer = useRef();
     
   useEffect(() => {
     timer = setInterval(() => {
