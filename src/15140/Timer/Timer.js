@@ -15,14 +15,30 @@ function Timer() {
     
   useEffect(() => {
     timer = setInterval(() => {
-      setTime(() => {
-        return {
-          mseconds: time.mseconds + 1,
-          seconds: time.seconds,
-          minutes: time.minutes,
+      setTime((prev) => {
+        if (time.mseconds < 100) {
+          return {
+            ...prev,
+            mseconds: time.mseconds + 1,
+          }
         }
+        if (time.mseconds === 100 && time.seconds < 60) {
+          return {
+            ...prev,
+            seconds: time.seconds + 1,
+            mseconds: time.mseconds = 0
+          }
+        }
+        if (time.seconds === 60 && time.minutes < 60) {
+          return {
+            ...prev,
+            minutes: time.minutes + 1,
+            seconds: time.seconds = 0
+          }
+        }
+        return prev;
       })
-    }, 10)
+    }, 1)
     return () => clearInterval(timer);
   });
   

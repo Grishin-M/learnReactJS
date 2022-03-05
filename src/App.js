@@ -25,12 +25,15 @@
 // написать свой кастомный customMap аналог реального map из языка js
 
 import './App.css';
+import Form from './15140/Form/Form'
+import Timer from './15140/Timer/Timer'
 
 function App() {
 
   return (
     <div className='wrapper'>
-      вставлять сюда задания
+      <Form />
+      <Timer />
     </div>
   )
 }
