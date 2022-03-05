@@ -1,9 +1,6 @@
 import { useState } from 'react';
 import '../Form/Form.css'
 
-// один useState ???? { } refactoring
-// один обработчик
-
 function From() {
   const StartValues = {
     Name: '',
@@ -53,9 +50,9 @@ function From() {
 
           <div className='form-btn'>    
             <button className='btn-form' type="button" onClick={() => setInput(() => ({
-              Result: String('Имя: ' + input.Name) + ' ' + 
-              String('Фамилия: ' + input.Surname) + ' ' + 
-              String('Возраст: ' + input.Age)
+              Result: 'Имя: ' + input.Name + ' ' + 
+              'Фамилия: ' + input.Surname + ' ' + 
+              'Возраст: ' + input.Age
               }))}>Отправить</button>
             <p>Результат: {input.Result}</p>
           </div>
