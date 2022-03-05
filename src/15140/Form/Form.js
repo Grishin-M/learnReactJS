@@ -1,18 +1,23 @@
 import { useState } from 'react';
+import StartValues from '../Form/state'
 import '../Form/Form.css'
 
 // один useState ???? { } refactoring
 // один обработчик
 
 function From() {
-  const StartValues = {
-    Name: '',
-    Surname: '',
-    Age: '',
-    Result: ''
-  }
-
+  
   const [input, setInput] = useState(StartValues);
+
+  const changeValue = (event) => {
+    const { name, value } = event.target;
+    setInput((prev) => {
+      return {
+        ...prev,
+        [name]: value
+      }
+    })
+  };
 
   return (
       <div className='wrapper-form'>
@@ -31,31 +36,38 @@ function From() {
 
           <div className='form-style'>
            
-            <input className='form-input' type='text' placeholder='Иван' required
-            onChange={(event) => setInput((prevState) => ({
-              ...prevState,
-              Name: event.target.value
-            }))}></input>
+            <input
+              className='form-input'
+              type='text'
+              placeholder='Иван'
+              required
+              onChange={changeValue}
+              name="userName"
+            />
            
-            <input className='form-input' type='text' placeholder='Иванов' required 
-            onChange={(event) => setInput((prevState) => ({
-              ...prevState,
-              Surname: event.target.value
-            }))}></input>
+            <input
+              className='form-input'
+              type='text'
+              placeholder='Иванов'
+              required 
+              onChange={changeValue}
+              name="surname"
+            />
            
-            <input className='form-input' type='number' 
-            onChange={(event) => setInput((prevState) => ({
-              ...prevState,
-              Age: event.target.value
-            }))}></input>
+            <input
+              className='form-input'
+              type='number' 
+              onChange={changeValue}
+              name="age"
+            />
 
           </div>
 
           <div className='form-btn'>    
             <button className='btn-form' type="button" onClick={() => setInput(() => ({
-              Result: String('Имя: ' + input.Name) + ' ' + 
-              String('Фамилия: ' + input.Surname) + ' ' + 
-              String('Возраст: ' + input.Age)
+              Result: String('Имя: ' + input.userName) + ' ' + 
+              String('Фамилия: ' + input.surname) + ' ' + 
+              String('Возраст: ' + input.age)
               }))}>Отправить</button>
             <p>Результат: {input.Result}</p>
           </div>
