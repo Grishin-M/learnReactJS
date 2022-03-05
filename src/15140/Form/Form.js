@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import initialState from '../Form/state'
+import initialState from './state'
 import '../Form/Form.css'
 
 function From(){
