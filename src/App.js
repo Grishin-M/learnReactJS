@@ -8,7 +8,7 @@
  * 3b) поле фамилия type="text"
  * 3c) возраст type="number"
  * 4) создай папку timer напиши таймер
- * и кнопку типо отправить и поработать с onClick useState, onChange 
+ * и кнопку типо отправить и поработать с onClick useState, onChange
  * 5) после ввода данных отобразить все это все в виде строки снизу или сверху
  */
 
@@ -25,25 +25,12 @@
 // написать свой кастомный customMap аналог реального map из языка js
 
 import './App.css';
-import Form from './components/Form/Form'
-import Counter from './components/Counter/Counter'
-import Timer from './components/Timer/Timer'
-import MyApiComponent from './components/Api/Api';
-import CounterForMemo from './components/useMemo/counterForMemo';
-import UseCallback from './components/useCallback/UseCallback';
-import Ref from './components/useRef/Ref';
 
 function App() {
-  
+
   return (
     <div className='wrapper'>
-      <CounterForMemo />
-      <UseCallback />      
-      <Ref />
-      <Counter />
-      <Form />
-      <Timer />
-      <MyApiComponent />
+      вставлять сюда задания
     </div>
   )
 }
