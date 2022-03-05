@@ -41,24 +41,6 @@ function Timer() {
     }, 1)
     return () => clearInterval(timer);
   });
-  
-  /* Пробовал, но ничего вообще не отображалось */
-  // useEffect(() => {
-  //   timer = setInterval(() => {
-  //     setTime(time.mseconds + 1);
-  //       if(time.mseconds === 100) {
-  //         setTime(time.seconds + 1);
-  //         setTime(0);
-  //       }
-  //       if(seconds === 59) {
-  //         setTime(time.minutes + 1);
-  //         setTime(0)
-  //       }
-  //   }, 10)
-  
-  //   return () => clearInterval(timer);
-  
-  // });
 
   const restart = () => {
     setTime(() => {
