@@ -1,18 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../Timer/Timer.css';
+import initialValues from './state'
 
-function Timer() {
+function Timer(){
 
-  const initialValues = {
-    mseconds: 0,
-    seconds: 0,
-    minutes: 0,
-  }
-  
   const [time, setTime] = useState(initialValues);
-
-  let timer = useRef(0);
-
+  
+  const timer = useRef(0);
+  
   function fooForTimer() {
      setTime((prev) => {
         if (time.mseconds < 100) {
@@ -37,7 +32,7 @@ function Timer() {
         }
         return prev;
       })
-    return timer;
+    return;
   }
 
   useEffect(() => {
