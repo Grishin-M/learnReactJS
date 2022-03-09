@@ -18,20 +18,20 @@ function Timer() {
   useEffect(() => {
    timer.current = setInterval(() => {
       setTime((prev) => {
-        if (timer.mseconds < 100) {
+        if (time.mseconds < 100) {
           return {
             ...prev,
             mseconds: timer.current.mseconds + 1,
           }
         }
-        if (timer.mseconds === 100 && timer.seconds < 60) {
+        if (time.mseconds === 100 && time.seconds < 60) {
           return {
             ...prev,
             seconds: timer.current.seconds + 1,
             mseconds: timer.current.seconds = 0
           }
         }
-        if (timer.seconds <= 60 && timer.minutes < 60) {
+        if (time.seconds <= 60 && time.minutes < 60) {
           return {
             ...prev,
             minutes: timer.current.minutes + 1,
