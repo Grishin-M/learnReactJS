@@ -3,13 +3,13 @@ import '../Timer/Timer.css';
 
 function Timer() {
 
-  const StartValues = {
+  const initialValues = {
     mseconds: 0,
     seconds: 0,
     minutes: 0,
   }
   
-  const [time, setTime] = useState(StartValues);
+  const [time, setTime] = useState(initialValues);
 
   let timer = useRef();
     
