@@ -3,17 +3,14 @@ import initialState from './state'
 import '../Form/Form.css'
 
 function From(){
-  
   const [input, setInput] = useState(initialState);
-
+  const showResult = () => {
+    setInput((prev) => ({...prev, Result: `Имя: ${input.userName} Фамилия: ${input.surname} Возраст: ${input.age}`}))
+  };
   const changeValue = (event) => {
     const { name, value } = event.target;
     setInput((prev) => ({ ...prev, [name]: value }))
   };
-
-  const showResult = () => {
-    setInput(() => ({Result: 'Имя: ' + input.userName + ' ' + 'Фамилия: ' + input.surname + ' ' + 'Возраст: ' + input.age}))
-  }
 
   return (
       <div className='wrapper-form'>

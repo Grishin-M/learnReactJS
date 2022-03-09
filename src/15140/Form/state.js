@@ -1,8 +1,8 @@
   const initialState = {
-    Name: '',
-    Surname: '',
-    Age: '',
-    Result: ''
+    name: '',
+    surname: '',
+    age: '',
+    result: ''
   }
 
 export default initialState;

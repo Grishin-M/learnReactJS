@@ -3,12 +3,9 @@ import '../Timer/Timer.css';
 import initialValues from './state'
 
 function Timer(){
-
   const [time, setTime] = useState(initialValues);
-  
   const timer = useRef(0);
-  
-  function fooForTimer() {
+  const fooForTimer = () => {
      setTime((prev) => {
         if (time.mseconds < 100) {
           return {
@@ -41,7 +38,6 @@ function Timer(){
   }, [timer.current]);
 
   const restart = () => setTime(initialValues);
-  
   const stop = () => {
     clearInterval(timer.current);
   }
