@@ -14,7 +14,7 @@ function Timer() {
   let timer = useRef(0);
 
   function fooForTimer() {
-     timer.current = setTime((prev) => {
+     setTime((prev) => {
         if (time.mseconds < 100) {
           return {
             ...prev,
@@ -37,18 +37,18 @@ function Timer() {
         }
         return prev;
       })
-    return () => clearInterval(timer);
+    return timer;
   }
 
   useEffect(() => {
-    return setInterval(fooForTimer, 10);
-  }, []);
+    timer.current = setInterval(fooForTimer, 10);
+    return () => clearInterval(timer.current);
+  }, [timer.current]);
 
-  const restart = () => {
-    setTime((prev) => ({ ...prev, mseconds:0, seconds:0, minutes:0 }))
-  }
+  const restart = () => setTime(initialValues);
+  
   const stop = () => {
-    clearInterval(timer);
+    clearInterval(timer.current);
   }
 
   return (
