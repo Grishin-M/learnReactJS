@@ -11,29 +11,31 @@ function Timer() {
   
   const [time, setTime] = useState(initialValues);
 
-  let timer = useRef();
-    
+  let timer = useRef(initialValues);
+  
+  console.log(timer)
+  
   useEffect(() => {
-    timer = setInterval(() => {
+   timer.current = setInterval(() => {
       setTime((prev) => {
-        if (time.mseconds < 100) {
+        if (timer.mseconds < 100) {
           return {
             ...prev,
-            mseconds: time.mseconds + 1,
+            mseconds: timer.current.mseconds + 1,
           }
         }
-        if (time.mseconds === 100 && time.seconds < 60) {
+        if (timer.mseconds === 100 && timer.seconds < 60) {
           return {
             ...prev,
-            seconds: time.seconds + 1,
-            mseconds: time.mseconds = 0
+            seconds: timer.current.seconds + 1,
+            mseconds: timer.current.seconds = 0
           }
         }
-        if (time.seconds === 60 && time.minutes < 60) {
+        if (timer.seconds <= 60 && timer.minutes < 60) {
           return {
             ...prev,
-            minutes: time.minutes + 1,
-            seconds: time.seconds = 0
+            minutes: timer.current.minutes + 1,
+            seconds: timer.current.seconds = 0
           }
         }
         return prev;
@@ -43,13 +45,7 @@ function Timer() {
   });
 
   const restart = () => {
-    setTime(() => {
-        return {
-          mseconds: time.mseconds = 0,
-          seconds: time.seconds = 0,
-          minutes: time.minutes = 0,
-        }
-      })
+    setTime(() => (initialValues))
   }
   const stop = () => {
     clearInterval(timer);
