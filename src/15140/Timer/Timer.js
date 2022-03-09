@@ -21,21 +21,21 @@ function Timer() {
         if (time.mseconds < 100) {
           return {
             ...prev,
-            mseconds: timer.current.mseconds + 1,
+            mseconds: time.mseconds + 1,
           }
         }
         if (time.mseconds === 100 && time.seconds < 60) {
           return {
             ...prev,
-            seconds: timer.current.seconds + 1,
-            mseconds: timer.current.seconds = 0
+            seconds: time.seconds + 1,
+            mseconds: time.seconds = 0
           }
         }
         if (time.seconds <= 60 && time.minutes < 60) {
           return {
             ...prev,
-            minutes: timer.current.minutes + 1,
-            seconds: timer.current.seconds = 0
+            minutes: time.minutes + 1,
+            seconds: time.seconds = 0
           }
         }
         return prev;
