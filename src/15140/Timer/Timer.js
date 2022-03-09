@@ -11,13 +11,12 @@ function Timer() {
   
   const [time, setTime] = useState(initialValues);
 
-  let timer = useRef(initialValues);
+  let timer = useRef(0);
   
-  console.log(timer)
+  setInterval(timer, 10)
   
   useEffect(() => {
-   timer.current = setInterval(() => {
-      setTime((prev) => {
+   timer.current = setTime((prev) => {
         if (time.mseconds < 100) {
           return {
             ...prev,
@@ -40,12 +39,11 @@ function Timer() {
         }
         return prev;
       })
-    }, 10)
     return () => clearInterval(timer);
-  });
+  }, []);
 
   const restart = () => {
-    setTime(() => (initialValues))
+    setTime((prev) => ({ ...prev, mseconds:0, seconds:0, minutes:0 }))
   }
   const stop = () => {
     clearInterval(timer);
