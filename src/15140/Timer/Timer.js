@@ -12,11 +12,9 @@ function Timer() {
   const [time, setTime] = useState(initialValues);
 
   let timer = useRef(0);
-  
-  setInterval(timer, 10)
-  
-  useEffect(() => {
-   timer.current = setTime((prev) => {
+
+  const main = useEffect(() => {
+   timer = setTime((prev) => {
         if (time.mseconds < 100) {
           return {
             ...prev,
@@ -42,6 +40,11 @@ function Timer() {
     return () => clearInterval(timer);
   }, []);
 
+
+  const startinterval = () => {
+    setInterval(main, 10)
+  }
+
   const restart = () => {
     setTime((prev) => ({ ...prev, mseconds:0, seconds:0, minutes:0 }))
   }
@@ -54,6 +57,7 @@ function Timer() {
          <h1>Секундомер</h1>
          <h1>{time.minutes}:{time.seconds}:{time.mseconds}</h1>
          <div className='timerButtons'>
+           <button className='restart' onClick={startinterval}>Запустить</button>
            <button className='restart' onClick={restart}>Перезапустить</button>
            <button className='stop' onClick={stop}>Стоп</button>
          </div>
