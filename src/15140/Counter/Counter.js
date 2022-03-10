@@ -3,6 +3,7 @@ import '../Counter/Counter.css';
 
 function Counter() {
   const [item, setItem] = useState(0);
+  
   const incrementItem = () => setItem(item + 1);
   const decrementItem = () => setItem(item - 1);
   const clearItem = () => setItem(0); 
