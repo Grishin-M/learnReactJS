@@ -4,6 +4,7 @@ import '../Form/Form.css'
 
 function From(){
   const [input, setInput] = useState(initialState);
+  
   const showResult = () => {
     setInput((prev) => ({...prev, Result: `Имя: ${input.userName} Фамилия: ${input.surname} Возраст: ${input.age}`}))
   };

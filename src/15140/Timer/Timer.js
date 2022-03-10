@@ -4,7 +4,9 @@ import initialValues from './state'
 
 function Timer(){
   const [time, setTime] = useState(initialValues);
+
   const timer = useRef(0);
+  
   const fooForTimer = () => {
      setTime((prev) => {
         if (time.mseconds < 100) {
@@ -29,7 +31,6 @@ function Timer(){
         }
         return prev;
       })
-    return;
   }
 
   useEffect(() => {
