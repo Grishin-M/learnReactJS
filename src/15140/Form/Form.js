@@ -4,9 +4,9 @@ import '../Form/Form.css'
 
 function From(){
   const [input, setInput] = useState(initialState);
-  
+
   const showResult = () => {
-    setInput((prev) => ({...prev, Result: `Имя: ${input.userName} Фамилия: ${input.surname} Возраст: ${input.age}`}))
+    setInput((prev) => ({...prev, result: `Имя: ${input.name} Фамилия: ${input.surname} Возраст: ${input.age}`}))
   };
   const changeValue = (event) => {
     const { name, value } = event.target;
@@ -34,7 +34,7 @@ function From(){
               placeholder='Иван'
               required
               onChange={changeValue}
-              name="userName"
+              name="name"
             />
             <input
               className='form-input'
@@ -53,7 +53,7 @@ function From(){
           </div>
           <div className='form-btn'>    
             <button className='btn-form' type="button" onClick={showResult}>Отправить</button>
-            <p>Результат: {input.Result}</p>
+            <p>Результат: {input.result}</p>
           </div>
        </form>
       </div>
