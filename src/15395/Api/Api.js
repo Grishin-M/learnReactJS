@@ -5,24 +5,23 @@ function MyApiComponent() {
   const [state, setState] = useState(initialState)
   
   const loadData = async () => {
+    
     const result = await fetch("https://jsonplaceholder.typicode.com/todos")
     const getResult = await result.json()
+    
     setState({
       isLoaded: true,
       items: getResult 
     });
-
   }
 
-  loadData().catch((error) => {
+  useEffect(() => {
+    loadData().catch((error) => {
     setState({
       sLoaded: false,
       error: error
     });
   })
-
-  useEffect(() => {
-    loadData()
   }, [])
 
   if (!state.isLoaded) {
