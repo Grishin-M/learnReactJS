@@ -5,32 +5,38 @@ function MyApiComponent() {
   const [state, setState] = useState(initialState)
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/todos")
-      .then(res => res.json())
-      .then(
-        (result) => {
-          setState({isLoaded: true});
-          setState({items: result});
-        },
-        (error) => {
-          setState({isLoaded: true});
-          setState({error: error});
-        }
-      )
+    loadData()
   }, [])
 
+  const loadData = async () => {
+    await fetch("https://jsonplaceholder.typicode.com/todos")
+    .then(res => res.json())
+    .then(
+        (result) => {
+          setState({
+            isLoaded: true,
+            items: result
+          });
+        },
+        (error) => {
+          setState({
+            isLoaded: false,
+            error: error
+          });
+        })
+  }
+
+  if (!state.isLoaded) {
+    return <div>Loading...</div>;
+  }
   if (state.error) {
     return <div>Error: {state.error.message}</div>;
-  } else if (!state.isLoaded) {
-    return <div>Loading...</div>;
   } else {
     return (
-      <ul>
-        {state.items.map(item => (
-          <li key={item.userId}>
-            Id: {item.id} Title: {item.title}
-          </li>
-        ))}
+       <ul>
+      {state.items?.map(item => (
+        <li key={item.id}>Title: {item.title}</li>
+      ))}
       </ul>
     );
   }
