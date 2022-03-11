@@ -37,7 +37,7 @@ function MyApiComponent() {
         <li key={item.id}>Title: {item.title}</li>
       ))}
     </ul>
-    )
+  )
 }
 
 export default MyApiComponent;
