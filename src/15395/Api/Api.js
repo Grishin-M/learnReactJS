@@ -9,19 +9,25 @@ function MyApiComponent() {
   }, [])
 
   const loadData = async () => {
-    await fetch("https://jsonplaceholder.typicode.com/todos")
-    .then(res => res.json())
+    const result = await fetch("https://jsonplaceholder.typicode.com/todos")
+    const getResult = await result.json()
     .then(
         (result) => {
-          setState({
-            isLoaded: true,
-            items: result
+          setState((prev) => {
+            return {
+              ...prev,
+              isLoaded: true,
+              items: result
+            }
           });
         },
         (error) => {
-          setState({
-            isLoaded: false,
-            error: error
+          setState((prev) => {
+            return {
+              ...prev,
+              isLoaded: false,
+              error: error
+            }
           });
         })
   }
@@ -31,15 +37,14 @@ function MyApiComponent() {
   }
   if (state.error) {
     return <div>Error: {state.error.message}</div>;
-  } else {
-    return (
-       <ul>
+  }
+  return (
+    <ul>
       {state.items?.map(item => (
         <li key={item.id}>Title: {item.title}</li>
       ))}
-      </ul>
-    );
-  }
+    </ul>
+    )
 }
 
 export default MyApiComponent;
