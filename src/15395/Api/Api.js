@@ -9,20 +9,20 @@ function MyApiComponent() {
   }, [])
 
   const loadData = async () => {
-    try{
+    try {
       const result = await fetch("https://jsonplaceholder.typicode.com/todos")
       const getResult = await result.json()
-    setState({
-          isLoaded: true,
-          items: getResult 
-     });
-    } catch (error) {
       setState({
-              isLoaded: false,
-              error: state.error
-            });
+        sLoaded: true,
+        items: getResult 
+      });
     }
-
+    catch(error) {
+      setState({
+        isLoaded: false,
+        error: state.error
+      });
+    }
   }
 
   if (!state.isLoaded) {
