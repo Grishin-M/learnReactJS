@@ -8,16 +8,17 @@ function AnyFunc() {
   const getItems = () => {
     return state.number
   }
-
   const changeStyle = {
     color: state.myColor ? 'red' : 'black'
   }
+
   const changeInputValue = useCallback((event) => {
     setState((prev) => ({ ...prev, number: parseInt(event.target.value)}))
-  }, [])
+  }, [state.number])
+  
   const changeStyleValue = useCallback(() => {
     setState((prev) => ({ ...prev, myColor: !prev.myColor }))
-  }, [])
+  }, [state.myColor])
 
   return (
     <div style={changeStyle}>
