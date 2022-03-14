@@ -19,7 +19,8 @@ function Ref() {
       <h2>useRef</h2>
       <label
         ref={forLabel}
-      >someLabelText</label><br/><br/>
+      >someLabelText</label>
+      <br/><br/>
       <input
         type="number"
         value={num}
