@@ -2,7 +2,7 @@ import React, { useState, useCallback } from "react";
 import List from './List'
 import initialState from "./state";
 
-function UseCallback() {
+function AnyFunc() {
   const [state, setState] = useState(initialState)
 
   const getItems = useCallback(() => {
@@ -13,10 +13,10 @@ function UseCallback() {
     color: state.myColor ? 'red' : 'black'
   }
   const changeInputValue = (event) => {
-    setState({number: parseInt(event.target.value)})
+    setState((prev) => ({ ...prev, number: parseInt(event.target.value)}))
   }
   const changeStyleValue = () => {
-    setState({myColor: prev => !prev})
+    setState((prev) => ({ ...prev, myColor: !prev.myColor }))  
   }
 
   return (
@@ -38,4 +38,4 @@ function UseCallback() {
   )
 }
 
-export default UseCallback;
+export default AnyFunc;
