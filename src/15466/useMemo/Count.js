@@ -2,7 +2,6 @@ import React from "react";
 import { useMemo } from 'react';
 
 function Count ({value}) {
-  
     const getResult = useMemo(() => {
       let i = 0;
       while(i < 6000000) i++;

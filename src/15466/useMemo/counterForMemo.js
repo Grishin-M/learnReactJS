@@ -5,7 +5,6 @@ import Count from './Count';
 // useMemo сделать так чтобы чтобы значение вычислялось в дочернем компоненте только если пропс поменялся (придумать какие то values)
 
 function CounterForMemo() {
-
   const [count1, setCount1] = useState(0);
   
   return (

@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
 
 function Ref() {
-  
   const [num, setNum] = useState(0);
 
   const forLabel = useRef()
@@ -17,9 +16,7 @@ function Ref() {
   return(
     <div style={{margin:"15px 0 50px 0"}} ref={allDOM}>
       <h2>useRef</h2>
-      <label
-        ref={forLabel}
-      >someLabelText</label>
+      <label ref={forLabel}>someLabelText</label>
       <br/><br/>
       <input
         type="number"

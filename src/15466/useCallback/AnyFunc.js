@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from "react";
 import List from './List'
 import initialState from "./state";
+import '../useCallback/style.css'
 
 function AnyFunc() {
   const [state, setState] = useState(initialState)
@@ -21,17 +22,14 @@ function AnyFunc() {
   }, [state.myColor])
 
   return (
-    <div style={changeStyle}>
+    <div className="forAnyFunc" style={changeStyle}>
       <h2>useCallback</h2>
       <input
         type='number'
         value={state.number}
         onChange={changeInputValue}
       />
-      <button
-        onClick={changeStyleValue}
-        style={{margin: '0 0 0 20px'}}
-      >
+      <button onClick={changeStyleValue}>
         Click Me
       </button>
       <List getItems={getItems} />
