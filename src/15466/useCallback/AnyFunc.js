@@ -5,19 +5,19 @@ import initialState from "./state";
 function AnyFunc() {
   const [state, setState] = useState(initialState)
 
-  const getItems = useCallback(() => {
-    return state.number + 2
-  }, [state.number])
+  const getItems = () => {
+    return state.number
+  }
 
   const changeStyle = {
     color: state.myColor ? 'red' : 'black'
   }
-  const changeInputValue = (event) => {
+  const changeInputValue = useCallback((event) => {
     setState((prev) => ({ ...prev, number: parseInt(event.target.value)}))
-  }
-  const changeStyleValue = () => {
-    setState((prev) => ({ ...prev, myColor: !prev.myColor }))  
-  }
+  }, [])
+  const changeStyleValue = useCallback(() => {
+    setState((prev) => ({ ...prev, myColor: !prev.myColor }))
+  }, [])
 
   return (
     <div style={changeStyle}>
