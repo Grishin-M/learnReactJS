@@ -6,17 +6,15 @@ function UseCallback() {
   const [state, setState] = useState(initialState)
 
   const getItems = useCallback(() => {
-    return [state.number + 2]
+    return state.number + 2
   }, [state.number])
 
   const changeStyle = {
     color: state.myColor ? 'red' : 'black'
   }
-
   const changeInputValue = (event) => {
-    setState({number: event.target.value})
-  };
-
+    setState({number: parseInt(event.target.value)})
+  }
   const changeStyleValue = () => {
     setState({myColor: prev => !prev})
   }
