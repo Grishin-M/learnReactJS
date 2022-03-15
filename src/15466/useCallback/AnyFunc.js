@@ -29,7 +29,7 @@ function AnyFunc() {
       <button onClick={changeStyleValue}>
         Click Me
       </button>
-      <List getItems={() => state.number} />
+      <List getItems={state.number} />
     </div>
   )
 }
