@@ -6,10 +6,6 @@ import '../useCallback/style.css'
 function AnyFunc() {
   const [state, setState] = useState(initialState)
 
-  const changeStyle = {
-    color: state.myColor ? 'red' : 'black'
-  }
-
   const changeInputValue = useCallback((event) => {
     setState((prev) => ({ ...prev, number: parseInt(event.target.value)}))
   }, [])
@@ -19,7 +15,7 @@ function AnyFunc() {
   }, [])
 
   return (
-    <div className="forAnyFunc" style={changeStyle}>
+    <div className="forAnyFunc" style={{color: state.myColor ? 'red' : 'black'}}>
       <h2>useCallback</h2>
       <input
         type='number'
