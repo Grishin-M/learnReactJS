@@ -15,14 +15,15 @@ function AnyFunc() {
   }, [])
 
   return (
-    <div className="forAnyFunc" style={{color: state.myColor ? 'red' : 'black'}}>
+    <div className={ state.myColor ? 'forAnyFuncRed' : 'forAnyFunc' }>
       <h2>useCallback</h2>
       <input
         type='number'
         value={state.number}
         onChange={changeInputValue}
+        className={ state.myColor ? 'forAnyFuncRed' : 'forAnyFunc' }
       />
-      <button onClick={changeStyleValue}>
+      <button onClick={changeStyleValue} className={ state.myColor ? 'forAnyFuncRed' : 'forAnyFunc' }>
         Click Me
       </button>
       <List getItems={state.number} />
