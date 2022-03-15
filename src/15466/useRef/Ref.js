@@ -5,12 +5,12 @@ function Ref() {
 
   const forLabel = useRef()
   const forInput = useRef()
-  const allDOM = useRef();
+  const allDOM = useRef()
 
   const getNum = () => {
-    console.log(forLabel.current);
-    console.log(forInput.current);
-    console.log(allDOM.current);
+    console.log(forLabel.current)
+    console.log(forInput.current)
+    console.log(allDOM.current)
   }
 
   return(

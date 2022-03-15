@@ -6,20 +6,17 @@ import '../useCallback/style.css'
 function AnyFunc() {
   const [state, setState] = useState(initialState)
 
-  const getItems = () => {
-    return state.number
-  }
   const changeStyle = {
     color: state.myColor ? 'red' : 'black'
   }
 
   const changeInputValue = useCallback((event) => {
     setState((prev) => ({ ...prev, number: parseInt(event.target.value)}))
-  }, [state.number])
+  }, [])
   
   const changeStyleValue = useCallback(() => {
     setState((prev) => ({ ...prev, myColor: !prev.myColor }))
-  }, [state.myColor])
+  }, [])
 
   return (
     <div className="forAnyFunc" style={changeStyle}>
@@ -32,7 +29,7 @@ function AnyFunc() {
       <button onClick={changeStyleValue}>
         Click Me
       </button>
-      <List getItems={getItems} />
+      <List getItems={() => state.number} />
     </div>
   )
 }

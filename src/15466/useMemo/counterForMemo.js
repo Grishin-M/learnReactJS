@@ -26,7 +26,7 @@ function CounterForMemo() {
         <Count value={count1} />
       </div>
     </div>
-  );
+  )
 }
 
 export default CounterForMemo;
