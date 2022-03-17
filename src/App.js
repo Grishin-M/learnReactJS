@@ -5,11 +5,37 @@ import MyApiComponent from './15395/Api/Api'
 import AnyFunc from './15466/useCallback/AnyFunc'
 import CounterForMemo from './15466/useMemo/counterForMemo'
 import Ref from './15466/useRef/Ref'
+import Input from './15911/Input'
+import TodoItem from './15911/TodoItem'
+
+const todoList = [{
+  item: 'todo',
+  done: false,
+  id: 1
+},{
+  item: 'todo2',
+  done: true,
+  id: 2
+}]
 
 function App() {
 
   return (
     <div className='wrapper'>
+      <div className='wrapp_container'>
+        <div className='wrapp_todoContainer'>
+          {
+            todoList.map(item => (
+              <TodoItem
+                name={item.item}
+                done={item.done}
+                id={item.id}
+              />
+            ))
+          }
+        </div>
+        <Input />
+      </div>
       <Ref />
       <CounterForMemo />
       <AnyFunc />
