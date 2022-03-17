@@ -8,17 +8,12 @@ import Ref from './15466/useRef/Ref'
 import Input from './15911/Input'
 import TodoItem from './15911/TodoItem'
 
-const todoList = [{
-  item: 'todo',
-  done: false,
-  id: 1
-},{
-  item: 'todo2',
-  done: true,
-  id: 2
-}]
+import { useSelector } from 'react-redux'
+import { selectTodoList } from './features/todoSlice'
+
 
 function App() {
+  const todoList = useSelector(selectTodoList)
 
   return (
     <div className='wrapper'>
