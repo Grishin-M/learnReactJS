@@ -25,6 +25,7 @@ function App() {
                 name={item.item}
                 done={item.done}
                 id={item.id}
+                key={item.toString()}
               />
             ))
           }

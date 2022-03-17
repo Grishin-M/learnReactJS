@@ -21,7 +21,6 @@ const Input = () => {
     <div className="input">
       <input id="inputAddTodo" type='text' value={input} onChange={event => setInput(event.target.value)} />
       <button id="btnAddTodo" onClick={addTodo}>Добавить</button>
-
     </div>
   )
 }
