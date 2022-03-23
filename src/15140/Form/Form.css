@@ -27,8 +27,8 @@
 .form-label sup {
   color: red;
 }
-input[type="text"],
-input[type="number"] {
+.form-style input[type="text"],
+.form-style input[type="number"] {
   width: 222px;
   height: 40px;
   border: 1px solid #266dc2;
